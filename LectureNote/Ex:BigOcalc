@@ -1,0 +1,45 @@
+// What is the Big O of the below function? (Hint, you may want to go line by line)
+function funChallenge(input) {
+  let a = 10;
+  a = 50 + 3;
+
+  for (let i = 0; i < input.length; i++) {
+    anotherFunction();
+    let stranger = true;
+    a++;
+  }
+  return a;
+}
+
+# Worst Case: When calculating Big O we will be considering the worst case scenario
+# Remove Constants: Drop the constant because it has no significant effect on the runtime considering the scalability
+# Different terms of input: 
+
+function compressBoxesTwice(boxes, boxes2){
+    boxes.forEach(function(boxes){
+        console.log(boxes)
+    })
+
+    boxes2.forEach(function(boxes2){
+        console.log(boxes2)
+    })
+}
+
+O(n+m)
+
+//Log all pairs of array
+const boxes = [1,2,3,4,5];
+
+function logAllPairsOfArray(array){
+    for(let i =0; i<array.length; i++){
+        for(let j=0; j < array.length; j++){
+            conosle.log(array[i], array[j])
+        }
+    }
+}
+
+logAllPairsOfArray(boxes)
+
+#O(n^2) the runtime increases quadratically
+
+# Drop Non Dominants

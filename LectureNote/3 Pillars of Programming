@@ -1,0 +1,8 @@
+What is good code?
+1. Readable
+2. Scalable --> Speed, Memory
+
+Best CodeDeploy--> Readable, Speed, Memory(Space Complexity)
+There is usually a tradeoff between speed and Memory
+Heap --> variable
+Stack --> Keep track of function calling

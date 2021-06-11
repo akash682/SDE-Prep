@@ -1,0 +1,9 @@
+Singly vs Doubly Linked List
+
+Singly
+Pro: Simple implementation, Less memory, Delete/insert Faster, 
+Cons: Cannot go backward
+
+Doubly
+Pro: Traverse from head or backward
+Cons: Complex, More memory, 

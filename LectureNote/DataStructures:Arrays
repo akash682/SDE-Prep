@@ -1,0 +1,23 @@
+Store variables one after another
+
+lookup O(1)
+push O(1)
+insert O(n)
+delete O(n)
+
+Static Array --> it requires to define the size of memory allocation before usage
+i.e. C++ int a[20]; int b[5] {1,2,3,4,5}
+
+Dynamic Array --> don't need to think about memory allocation before usage. the machine takes care for you. 
+i.e. Python, Javascript
+
+Arrays
+++
+Fast lookups
+Fast push/pop
+Ordered
+
+--
+Slow inserts
+Slow deletes
+Fixed size*

@@ -1,0 +1,17 @@
+Data Structure + Algorithms = Programs
+It may be important to learn latest built in fucntion and libraries but the fundamentals on data structions and algorithm are way more important
+
+What is a Data Structure?
+a data structure is a collection of value and each values, the values can have relationships among them and functions applied to them
+Each one is different what it can do and what it is best used for.
+We can think of it as a compartment or a furniture that stores our object.
+
+CPU, RAM, Storage
+* Memory *
+CPU: Cache
+RAM: Address and Bit(Byte)
+
+https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link
+
+Operations on Data Structures
+Insertion, Deletion, Traversal, Searching, Sorting, Access

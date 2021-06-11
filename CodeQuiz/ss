@@ -1,0 +1,48 @@
+1389 Create Target Array in the Given Order    
+1678. Goal Parser Interpretation    
+1773. Count Items Matching a Rule
+1221. Split a String in Balanced Strings
+1486. XOR Operation in an Array
+1832. Check if the Sentence Is Pangram
+1614. Maximum Nesting Depth of the Parentheses
+1588. Sum of All Odd Length Subarrays
+1688. Count of Matches in Tournament
+1290. Convert Binary Number in a Linked List to Integer
+
+1859	Sorting the Sentence
+1684. Count the Number of Consistent Strings
+709. To Lower Case
+1844. Replace All Digits with Characters
+1534. Count Good Triplets
+1816. Truncate Sentence
+1732. Find the Highest Altitude
+1021. Remove Outermost Parentheses
+1266 Minimum Time Visiting All Points    
+804. Unique Morse Code Words
+
+1704. Determine if String Halves Are Alike
+832. Flipping an Image
+1252. Cells with Odd Values in a Matrix
+1295. Find Numbers with Even Number of Digits
+1725. Number Of Rectangles That Can Form The Largest Square
+1827. Minimum Operations to Make the Array Increasing
+1323. Maximum 69 Number
+1572. Matrix Diagonal Sum
+1309. Decrypt String from Alphabet to Integer Mapping
+1370. Increasing Decreasing String
+
+meet.google.com/ygy-ussw-kuv
+
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+        length = len(s)
+        count = [0, 0]
+        for start in range(length):
+            for pr in range(1, length-start):
+                string = s[start:start+pr]
+                for chr in string:
+                    if chr == 'R':
+                        count[0] += 1
+                    else:
+                        count[1] += 1
+        return
