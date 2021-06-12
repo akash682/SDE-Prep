@@ -37,8 +37,71 @@ class BinarySearchTree():
                         currentNode = currentNode.right
 
     def lookup(self, value):
-        pass
+        if self.root is None:
+            print("This is an empty BST.")
+        else:
+            currentNode = self.root
+            while True:
+                if value == currentNode.value:
+                    return True
+                elif value < currentNode.value:
+                    if currentNode.left == None:
+                        return False
+                    else: 
+                        # Go Left
+                        currentNode = currentNode.left
+                else:
+                    if currentNode.right == None:
+                        return False
+                    else:
+                        # Go right
+                        currentNode = currentNode.right
     
+    def remove(self, value):
+        if self.root is None:
+            print("This is an empty BST.")
+        else:
+            currentNode = self.root
+            parentNode = None
+            while True:
+                if value == currentNode.value:
+                    break
+                elif value < currentNode.value:
+                    if currentNode.left == None:
+                        return False
+                    else: 
+                        # Go Left
+                        parentNode = currentNode
+                        currentNode = currentNode.left
+                else:
+                    if currentNode.right == None:
+                        return False
+                    else:
+                        # Go right
+                        parentNode = currentNode
+                        currentNode = currentNode.right
+
+            
+
+            if currentNode.right.left is None:
+                minNode = currentNode.right
+                minNode.right = None
+                minNode.left = currentNode.left
+                parentNode.left = minNode
+            else:
+                minNode = currentNode.right
+                while True:
+                    if minNode.left is None:
+                        break
+                    else:
+                        minpar = minNode
+                        minNode = minNode.left
+                
+                minNode.left = currentNode.left
+                minNode.right = currentNode.right
+                parentNode.left = minNode
+
+
     def print_tree(self):
         if self.root != None:
             self.printt(self.root)
@@ -57,4 +120,7 @@ myTree.insert(20)
 myTree.insert(170)
 myTree.insert(15)
 myTree.insert(1)
-myTree.print_tree()
+
+myTree.lookup(20)
+myTree.remove(4)
+print("hello")
