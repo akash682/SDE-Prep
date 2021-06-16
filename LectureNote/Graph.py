@@ -16,4 +16,20 @@ Cyclic/Acyclic
 When Nodes are connected in circular fashion
 Google Maps
 
+Edge List: Just shows the connection and the node which is a list of edge 
+Adjacent List: shows the adjacent node of the specific node
+Adjacent Matrix: 
 """
+# Edge List
+graph = [[0,2], [2,3],[2,1],[1,3]]
+
+# Adjacent List (Hash Table)
+graph = [[2],[2,3],[0,1,3],[1,2]]
+
+#Adjacent Matrix
+graph = [
+    [0, 0, 1, 0],
+    [0, 0, 1, 1],
+    [1, 1, 0, 1],
+    [0, 1, 1, 0]
+]
