@@ -19,6 +19,9 @@ Google Maps
 Edge List: Just shows the connection and the node which is a list of edge 
 Adjacent List: shows the adjacent node of the specific node
 Adjacent Matrix: 
+
+Good at describing real life relationship
+Scaling is hard!!! 
 """
 # Edge List
 graph = [[0,2], [2,3],[2,1],[1,3]]
