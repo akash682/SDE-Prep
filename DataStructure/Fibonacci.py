@@ -1,5 +1,5 @@
 
-def fibonacciIterative(n):
+def fibonacciIterative(n): # O(n)
     fib_res_i = 1
     fib_res_i1 = 0
 
@@ -11,7 +11,7 @@ def fibonacciIterative(n):
     return fib_res_i
 
 
-def fibonacciRecursive(n):
+def fibonacciRecursive(n): #O(2^n)
     """
     a(n+1) = a(n) + a(n-1)
     """
@@ -24,3 +24,7 @@ def fibonacciRecursive(n):
 
 print(fibonacciIterative(3))
 print(fibonacciRecursive(12))
+
+"""
+Anything you do with a recursion CAN be done iteratively (loop).
+"""
