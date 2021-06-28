@@ -1,4 +1,4 @@
-numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4 ,0]
+numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 
 def bubbleSort(array):
     for itr in range(len(numbers)):

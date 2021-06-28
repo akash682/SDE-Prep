@@ -17,3 +17,8 @@ itr1 = reverseString_itr('yoyo mastery')
 rec1 = reverseString_rec('yoyo_mastery')
 
 print(itr1,rec1)
+
+"""
+Pros Dry, readability
+Cons Memory Consumption
+"""

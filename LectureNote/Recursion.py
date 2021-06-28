@@ -12,6 +12,17 @@ Task: Pour the water until the cup gets filled
 Stack Overflow: Biggest problem is the infinite loop
 Computer needs to allocate memory to rememver the action. If the function is calling itself and returning nothing then we experience infinite loop and which result in Stack overflow.
 
+Recursion
+Pros Make a code dry and enhance the readability(Tree traversal)
+Cons Large Stack
+
+There are a way to make it memory efficient!
+
+Rucursion Rule
+1. Divided into number of subproblems that are smaller instances of the same problem.
+2. Each instance of the subproblem is identical in nature
+3. The solutions of each subproblem can be combined to solve the problem at hand.
+Divide and Conquer using Recursion
 """
 
 counter = 0
