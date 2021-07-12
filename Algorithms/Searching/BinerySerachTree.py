@@ -136,7 +136,42 @@ class BinarySearchTree():
             queue.append(currentNode.right)
         
         return self.breadthFirstSearchR(queue, list)
+    
+    def DFSInorder(self):
+        return self.traverseInOrder(self.root, [])
+    
+    def DFSPostorder(self):
+        return self.traversePostOrder(self.root, [])
 
+    def DFSPreorder(self):
+        return self.traversePreOrder(self.root, [])
+
+    def traverseInOrder(self, node, list):
+        if(node.left):
+            self.traverseInOrder(node.left, list)
+        list.append(node.value)
+        if(node.right):
+            self.traverseInOrder(node.right, list)
+        
+        return list
+
+    def traversePreOrder(self, node, list):
+        list.append(node.value)
+        if(node.left):
+            self.traversePreOrder(node.left, list)
+        if(node.right):
+            self.traversePreOrder(node.right, list)       
+        return list
+    
+    def traversePostOrder(self, node, list):
+        if(node.left):
+            self.traversePostOrder(node.left, list)
+        if(node.right):
+            self.traversePostOrder(node.right, list)  
+        list.append(node.value)
+        return list
+
+    
 
 myTree = BinarySearchTree()
 myTree.insert(9)
@@ -149,5 +184,20 @@ myTree.insert(1)
 
 myTree.lookup(20)
 # myTree.remove(4)
-print(myTree.breadthFirstSearch())
-print(myTree.breadthFirstSearchR([myTree.root],[]))
+# print(myTree.breadthFirstSearch())
+# print(myTree.breadthFirstSearchR([myTree.root],[]))
+
+print(myTree.DFSInorder())
+print(myTree.DFSPreorder())
+print(myTree.DFSPostorder())
+
+"""
+DFS
+InOrder - [ 1, 4, 6, 9, 15, 20, 170]
+Preorder - [9, 4, 1, 6, 20, 15, 170]
+PostOrder - [1, 6, 4, 15, 170, 20, 9]
+
+   9
+  4 20
+1 6 15 170
+"""
