@@ -87,4 +87,9 @@ The answer is usually a divide-and-conquer approach — perform distributed proc
 combine them later.
 
 
+Section summary
+We don't want to memorize, so that we can explain the logic and thought process of how to solve the problem
+Some of the skill that interviewers are looking for.
+Good Code = Data Structure + Algorithm
+
 """
