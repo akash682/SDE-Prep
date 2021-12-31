@@ -15,3 +15,5 @@ print(strings)
 # Insert  O(n), we need to shift the whole data allocation by 1, which makes it do an operation for each element, which makes the time complexity O(n)
 strings.insert(0,'z')
 print(strings)
+
+
