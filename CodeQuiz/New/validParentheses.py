@@ -23,15 +23,17 @@ def isValid(s):
     if len(s) == 1:
         return False
     for i in range(len(s)):
+        # Found a closing bracket
         if s[i] in hash_close:
             if hash_close[s[i]] != track_latest_openbracket:
                 return False
             else:
                 track_latest_openbracket = track_openbracket.pop()
+        # Found a opening bracket
         else:
             track_openbracket.append(track_latest_openbracket)
             track_latest_openbracket = s[i]
-
+    # IF there is something left in the openbracket stack
     if track_openbracket:
         return False
 
