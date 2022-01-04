@@ -40,10 +40,6 @@ class Solution:
                 break
         
         return "".join(res)
-        
-
-
-
 
 strs = ["flower","flow","flight"]
 solution = Solution()
