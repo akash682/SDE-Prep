@@ -10,6 +10,32 @@ Lookup O(1)
 Delete O(1)
 Search O(1)
 
+## Hash Tables VS Arrays
+Arrays
+Search O(n)
+Lookup O(1)
+Push* O(1)
+Insert O(n)
+Delete O(n)
+
+Hash Tables
+Search O(1)
+Insert O(1)
+Lookup O(1)
+Delete O(1)
+
+Problem: No concept of order
+
+Hash Tables
+++ PLUS ++
+Fast Lookups
+Fast Inserts
+Flexible Keys
+
+-- MINUS --
+Unordered
+Slow key Iteration
+
 """
 
 class User:
