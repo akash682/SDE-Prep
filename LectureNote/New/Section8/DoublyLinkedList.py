@@ -1,9 +1,13 @@
+from typing import NewType
+
+
 class Node():
     def __init__(self, value) -> None:
         self.value = value
         self.pointer = None
+        self.prev = None
 
-class LinkedList():
+class DoublyLinkedList():
     def __init__(self, value) -> None:
         self.head = Node(value)
         self.tail = self.head
@@ -11,12 +15,14 @@ class LinkedList():
     
     def append(self, value):
         newNode = Node(value)
+        newNode.prev = self.tail
         self.tail.pointer = newNode
         self.tail = newNode
         self.length += 1
 
     def prepend(self, value):
         newNode = Node(value)
+        self.head.prev = newNode
         newNode.pointer = self.head
         self.head = newNode
         self.length += 1 
@@ -26,6 +32,8 @@ class LinkedList():
         currentNode = self.head
         for i in range(index-1):
             currentNode = currentNode.pointer
+        currentNode.pointer.prev = newNode
+        newNode.prev = currentNode
         newNode.pointer = currentNode.pointer
         currentNode.pointer = newNode
         self.length +=1
@@ -34,22 +42,9 @@ class LinkedList():
         currentNode = self.head
         for i in range(index-1):
             currentNode = currentNode.pointer
+        currentNode.pointer.prev = currentNode
         currentNode.pointer = currentNode.pointer.pointer
         self.length -= 1
-    
-    def reverse(self):
-        currentNode = self.head
-        self.tail = currentNode
-        for i in range(self.length):
-            if i == 0:
-                cacheNode = currentNode
-                currentNode = currentNode.pointer
-            else:
-                currentNode.pointer = cacheNode
-                cacheNode = currentNode
-                currentNode = currentNode.pointer
-        self.tail.pointer = None
-        self.head = currentNode    
     
     def printLL(self):
         result = []
@@ -61,23 +56,20 @@ class LinkedList():
         
             
 
-myLinkedList = LinkedList(10)
-myLinkedList.printLL()
+myDoublyLinkedList = DoublyLinkedList(10)
+myDoublyLinkedList.printLL()
 
-myLinkedList.append(20)
-myLinkedList.printLL()
+myDoublyLinkedList.append(20)
+myDoublyLinkedList.printLL()
 
-myLinkedList.append(15)
-myLinkedList.printLL()
+myDoublyLinkedList.append(15)
+myDoublyLinkedList.printLL()
 
-myLinkedList.prepend(30)
-myLinkedList.printLL()
+myDoublyLinkedList.prepend(30)
+myDoublyLinkedList.printLL()
 
-myLinkedList.insert(2,30)
-myLinkedList.printLL()
+myDoublyLinkedList.insert(2,30)
+myDoublyLinkedList.printLL()
 
-myLinkedList.remove(2)
-myLinkedList.printLL()
-
-myLinkedList.reverse()
-myLinkedList.printLL()
+myDoublyLinkedList.remove(2)
+myDoublyLinkedList.printLL()
