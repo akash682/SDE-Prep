@@ -23,4 +23,15 @@ It's the same as the LInkedList but the difference is that it has the pointer to
 ## Single vs Double
 Single: Merit less memory, but not reversing
 Double: Can be traversed from head or the tail, the downside is complex requires memory, extra operation
+
+## LinkedList
+++ PLUS ++
+Fast Insertion
+Fast Deletion
+Ordered
+Flexible Size
+
+-- MINUS --
+Slow Lookup
+More Memory
 """

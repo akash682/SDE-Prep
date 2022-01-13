@@ -38,18 +38,17 @@ class LinkedList():
         self.length -= 1
     
     def reverse(self):
-        currentNode = self.head
-        self.tail = currentNode
-        for i in range(self.length):
-            if i == 0:
-                cacheNode = currentNode
-                currentNode = currentNode.pointer
-            else:
-                currentNode.pointer = cacheNode
-                cacheNode = currentNode
-                currentNode = currentNode.pointer
-        self.tail.pointer = None
-        self.head = currentNode    
+        if self.length == 1:
+            return self.head
+        first = self.head
+        second = first.pointer
+        while(second):
+            tmp = second.pointer
+            second.pointer = first
+            first = second
+            second = tmp
+        self.head.pointer = None
+        self.head = first
     
     def printLL(self):
         result = []
