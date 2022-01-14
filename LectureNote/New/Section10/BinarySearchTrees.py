@@ -51,6 +51,34 @@ class BinarySearchTree():
                 else:
                     if curNode.value == value:
                         return True
+    
+    def remove(self, value):
+        if not self.root:
+            return False
+        else:
+            curNode = self.root
+            prevNode = None
+            lmoneNode = None
+            while True:
+                if curNode.value < value:
+                    if curNode.right == None:
+                        return False
+                    else:
+                        prevNode = curNode
+                        curNode = curNode.right
+                elif curNode.value > value:
+                    if curNode.left == None:
+                        return False
+                    else:
+                        prevNode = curNode
+                        curNode = curNode.left
+                else:
+                    if curNode.value == value:
+                        curNode = curNode.right
+                        while curNode.left:
+                            lmoneNode = curNode
+                            curNode = curNode.left
+                        
 
 
 myTree = BinarySearchTree()
