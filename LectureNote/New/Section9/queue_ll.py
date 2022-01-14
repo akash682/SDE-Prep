@@ -28,6 +28,7 @@ class Queue():
         else:
             popNode = self.first
             self.first = self.first.next
+            self.length -= 1
             return popNode.value
             
 

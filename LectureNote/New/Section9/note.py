@@ -43,4 +43,16 @@ can be created using arrays and linked lists
 if we use array to build a queue, dequeue will be a nightmare 
 because it requires O(n) operation 
 If we use LinkedList to build a queue , it requries O(1) operation 
+
+
+## Stacks vs Queues
+++ PLUS ++
+Fast Operations
+Fast Peek
+Ordered
+
+-- MINUS --
+Slow Lookup
+
+Really useful while it's used in a restricted way
 """
