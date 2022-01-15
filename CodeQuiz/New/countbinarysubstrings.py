@@ -61,3 +61,22 @@ def countBinarySubstrings(s):
 
 s = '01'
 print(countBinarySubstrings(s))
+
+def countBinarySubstrings(s):
+    hikaku = s[0]
+    reference = []
+    tmp = 0
+    for i in range(len(s)):
+        if hikaku == s[i]:
+            tmp += 1
+        else:
+            hikaku = s[i]
+            reference.append(tmp)
+            tmp = 1
+    reference.append(tmp)
+    print(reference)
+    ans = 0
+    for i in range(len(reference)-1):
+        ans += min(reference[i], reference[i+1])
+
+    return ans

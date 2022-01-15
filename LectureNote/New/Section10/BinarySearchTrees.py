@@ -1,5 +1,8 @@
 from hashlib import new
 from multiprocessing.sharedctypes import Value
+from reprlib import aRepr
+from sre_constants import CATEGORY_UNI_LINEBREAK
+from turtle import left
 
 
 class Node():
@@ -56,28 +59,55 @@ class BinarySearchTree():
         if not self.root:
             return False
         else:
-            curNode = self.root
-            prevNode = None
-            lmoneNode = None
-            while True:
-                if curNode.value < value:
-                    if curNode.right == None:
-                        return False
+            currentNode = self.root
+            parentNode = None
+            while currentNode:
+                if currentNode.value > value:
+                    parentNode = currentNode
+                    currentNode = currentNode.left
+                elif currentNode.value < value:
+                    parentNode = currentNode
+                    currentNode = currentNode.right
+                elif currentNode.value == value:
+                    # Right Child is None
+                    if currentNode.right == None:
+                        if parentNode == None:
+                            self.root = currentNode.left
+                        else:
+                            if currentNode.value < parentNode.value:
+                                parentNode.left = currentNode.left
+                            elif currentNode.value > parentNode.value:
+                                parentNode.right = currentNode.left
+                    # Right Child doesn't not have left child.
+                    elif currentNode.right.left == None:
+                        if parentNode == None:
+                            self.root = currentNode.left
+                        else:
+                            currentNode.right.left = currentNode.left
+                            if currentNode.value < parentNode.value:
+                                parentNode.left = currentNode.right
+                            elif currentNode.value > parentNode.value:
+                                parentNode.right = currentNode.right
+                    # Right Child have left child
                     else:
-                        prevNode = curNode
-                        curNode = curNode.right
-                elif curNode.value > value:
-                    if curNode.left == None:
-                        return False
-                    else:
-                        prevNode = curNode
-                        curNode = curNode.left
-                else:
-                    if curNode.value == value:
-                        curNode = curNode.right
-                        while curNode.left:
-                            lmoneNode = curNode
-                            curNode = curNode.left
+                        leftmost = currentNode.right.left
+                        leftmostParent = currentNode.right
+                        while leftmost.left != None:
+                            leftmostParet = leftmost
+                            leftmost = leftmost.left
+                        
+                        leftmostParent.left = leftmost.right
+                        leftmost.left = currentNode.left
+                        leftmost.right = currentNode.right
+
+                        if parentNode == None:
+                            self.root = leftmost
+                        else:
+                            if currentNode.value < parentNode.value:
+                                parentNode.left = leftmost
+                            elif currentNode.value > parentNode.value:
+                                parentNode.right = leftmost
+                return True
                         
 
 
