@@ -93,7 +93,7 @@ class BinarySearchTree():
                         leftmost = currentNode.right.left
                         leftmostParent = currentNode.right
                         while leftmost.left != None:
-                            leftmostParet = leftmost
+                            leftmostParent = leftmost
                             leftmost = leftmost.left
                         
                         leftmostParent.left = leftmost.right

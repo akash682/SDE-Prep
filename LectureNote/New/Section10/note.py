@@ -53,4 +53,42 @@ Flexible Size
 
 -- MINUS -- 
 NO O(1) Operations
+
+## AVL Trees + Red Black Trees
+AVL Trees: It balances the height of the trees
+Red Black Trees: 
+
+## Binary Heaps
+Max Heap: The value of the child will always be smaller than the parent node.
+We can use it in Priority Queue 
+Great to lookup whatever is greater than the node just by checking the parentnode and the node in the same height
+Insert is done left to right, and bubbles up to the height whereever appropriate
+
+Memory Heap and Heap Data structure is not the same
+
+Lookup O(n)
+Insert O(logN)
+Delete O(logN)
+
+## Priority Queue
+There is no concept of unbalanced, the guarantee is the parent is always bigger than the children, no unbalanced
+Priority Queue: Type of data which each element have priority, night club(VIP, normal), EMR
+
+Binary Heaps(Priority Queue)
+++ PLUS ++
+Better than O(n)
+Priority 
+Flexible Size
+Fast Insert
+findmin,findmax has O(1)
+
+-- MINUS --
+Slow lookup
+
+
+## Trie
+Trie can outperform binary search tree/ binary heap certain cases 
+multiple children, letters, search for N, dictionary we can tell how many child we have
+auto completion, ip routing, 
+benefit of trie is the even space O(length of word)
 """
