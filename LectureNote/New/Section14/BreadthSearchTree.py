@@ -1,6 +1,8 @@
 from hashlib import new
+from multiprocessing.dummy import current_process
 from multiprocessing.sharedctypes import Value
-from reprlib import aRepr
+import queue
+from reprlib import aRepr, recursive_repr
 from sre_constants import CATEGORY_UNI_LINEBREAK
 from turtle import left
 
@@ -109,6 +111,67 @@ class BinarySearchTree():
                                 parentNode.right = leftmost
                 return True
                         
+    def breadthfirstSearch(self):
+        currentNode = self.root
+        list = []
+        queue = []
+        queue.append(currentNode)
+
+        while len(queue) > 0:
+            currentNode = queue.pop(0)
+            list.append(currentNode.value)
+            if currentNode.left:
+                queue.append(currentNode.left)
+            if currentNode.right:
+                queue.append(currentNode.right)
+        
+        return list
+    
+    def breadthfirstSearchR(self, queue, list):
+        if not len(queue):
+            return list
+        currentNode = queue.pop(0)
+        list.append(currentNode.value)
+        if currentNode.left:
+            queue.append(currentNode.left)
+        if currentNode.right:
+            queue.append(currentNode.right)
+        return self.breadthfirstSearchR(queue, list)
+    
+    def DFSInorder(self):
+        return self.traverseInOrder(self.root, [])
+    
+    def DFSPreorder(self):
+        return self.traversePreOrder(self.root, [])
+
+    def DFSPostOrder(self):
+        return self.traversePostOrder(self.root, [])
+
+    def traverseInOrder(self, node, list):
+        if node.left:
+            self.traverseInOrder(node.left, list)
+        list.append(node.value)
+        if node.right:
+            self.traverseInOrder(node.right, list)
+        return list
+    
+    def traversePreOrder(self, node, list):
+        list.append(node.value)
+        if node.left:
+            self.traversePreOrder(node.left, list)
+        if node.right:
+            self.traversePreOrder(node.right, list)
+        return list
+
+    def traversePostOrder(self, node, list):
+        if node.left:
+            self.traversePostOrder(node.left, list)
+        if node.right:
+            self.traversePostOrder(node.right, list)
+        list.append(node.value)
+        return list
+        
+        
 
 
 myTree = BinarySearchTree()
@@ -123,5 +186,9 @@ myTree.insert(1)
 
 print(myTree.lookup(15))
 print(myTree.lookup(21))
-print("hello")
+print(myTree.breadthfirstSearch())
+print(myTree.breadthfirstSearchR([myTree.root], []))
+print(myTree.DFSInorder())
+print(myTree.DFSPreorder())
+print(myTree.DFSPostOrder())
 
