@@ -1,5 +1,5 @@
 class Solution:
-    def sequentialDigits(self, low: int, high: int) -> List[int]:
+    def sequentialDigits(self, low: int, high: int):
         reference = "123456789"
         
         low_digits = len(str(low))
