@@ -35,7 +35,7 @@ searchWord = "mouse"
 mySolution.suggestedProducts(products, searchWord)
 
 class Solution:
-    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+    def suggestedProducts(self, products, searchWord):
         
         # BruteForce Approach
         res = []

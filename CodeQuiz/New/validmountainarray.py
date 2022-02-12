@@ -1,5 +1,5 @@
 class Solution:
-    def validMountainArray(self, arr: List[int]) -> bool:
+    def validMountainArray(self, arr) -> bool:
         inc_flag = True
         for i in range(len(arr)-1):
             if arr[i] == arr[i+1]:

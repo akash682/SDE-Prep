@@ -38,3 +38,8 @@ def merge(left, right):
 
 arr = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 print(MergeSort(arr))
+
+a = [1,2,3]
+a.append(4)
+a.extend([3])
+print(a)
